@@ -37,14 +37,11 @@ if ($variable != "") {
         <?php 
         require_once 'Michelf/Markdown.inc.php';
         use \Michelf\Markdown;
-				$my_html = Markdown::defaultTransform($blog["blog"]);
+				$my_html = Markdown::defaultTransform(html_entity_decode($blog["blog"]));
         echo $my_html
         ?>      
         </div>
 
-      <footer class="footer">
-        <p>&copy; Company 2014</p>
-      </footer>
 
     </div> <!-- /container -->
 </body>

@@ -5,7 +5,7 @@ if(!defined('hidden')) {
 }
 
 function add_blog($blog, $title){
-	mysql_query("INSERT INTO `blogs` (`blog`, `title`) VALUES ('{$blog}','{$title}'") or die(mysql_error());
+	mysql_query("INSERT INTO `blogs`(`blog`, `title`) VALUES ('{$blog}','{$title}')") or die(mysql_error());
 }
 
 function update_blog($blog_id, $blog){

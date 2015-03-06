@@ -37,11 +37,9 @@ if ($variable != "") {
       <div>
         <div class="col-lg-12">
         
-        <textarea name="blog" id="blog" style="width:100%;" rows="15">
-        <?php 
-        echo $blog["blog"];
-        ?>
-        </textarea>
+        <textarea name="blog" id="blog" style="width:100%;" rows="15"><?php 
+        echo htmlentities($blog["blog"]);
+        ?></textarea>
         <button type="submit" class="btn btn-default">Submit</button>   
         </form>   
         </div>
