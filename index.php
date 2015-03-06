@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
 define('hidden', TRUE);
+include("connect.php");
+include ("Parsedown.php");
 ?>
 <html lang="en">
 <head>

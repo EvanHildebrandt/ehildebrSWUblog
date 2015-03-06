@@ -6,6 +6,7 @@ if(!defined('hidden')) {
    die('Direct access not permitted');
 }
 
+define('hidden', TRUE);
 
 
 $hostname="db529173451.db.1and1.com";
@@ -37,6 +38,6 @@ else {
 $path = dirname(__FILE__);
 
 
-include("inc/instance.inc.php");
+include("functions.php");
 
 ?>
