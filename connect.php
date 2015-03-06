@@ -9,10 +9,7 @@ if(!defined('hidden')) {
 define('hidden', TRUE);
 
 
-$hostname="db529173451.db.1and1.com";
-$database="db529173451";
-$username="dbo529173451";
-$password="localhost";
+include("cred.php");
 
 $link = mysql_connect($hostname, $username, $password);
 mysql_set_charset("utf8", $link);
