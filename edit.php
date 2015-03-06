@@ -34,13 +34,14 @@ if ($variable != "") {
       </div>
 
       <div>
-        <div class="col-lg-6">
+        <div class="col-lg-12">
+        <form>
+        <textarea style="width:100%;" rows="20">
         <?php 
-        require_once 'Michelf/Markdown.inc.php';
-        use \Michelf\Markdown;
-				$my_html = Markdown::defaultTransform($blog["blog"]);
-        echo $my_html
-        ?>      
+        echo $blog["blog"];
+        ?>
+        <textarea>   
+        </form>   
         </div>
 
       <footer class="footer">

@@ -21,7 +21,7 @@ include ("Parsedown.php");
 <body>
  <div class="container">
       <div class="header">
-        <h3 class="text-muted">SWU BLOG</h3>
+        <h3 class="text-muted"><a href="index.php">SWU BLOG</a></h3>
       </div>
 
       <div class="jumbotron">
@@ -33,15 +33,16 @@ include ("Parsedown.php");
         <div class="col-lg-6">
         <?php
 				$allblogs = find_blogs();
-				while($row = mysql_fetch_array($allblogs)){?>
+				while($row = mysql_fetch_array($allblogs)){
+					$Parsedown = new Parsedown();?>
 
           <h4><?php echo '<a href="blog.php?var='.$row["blog_id"].'">'.$row["title"].'</a>' ?></h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <p><?php echo $Parsedown->text(substr($row["blog"],0,20)."...");?></p>
           <?php }?>
       </div>
 
       <footer class="footer">
-        <p>&copy; Company 2014</p>
+        <p>&copy; Evan Hildebrandt 2015</p>
       </footer>
 
     </div> <!-- /container -->
