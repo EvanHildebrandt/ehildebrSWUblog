@@ -19,6 +19,31 @@ include ("Parsedown.php");
 <![endif]-->
 </head>
 <body>
+ <div class="container">
+      <div class="header">
+        <h3 class="text-muted">SWU BLOG</h3>
+      </div>
 
+      <div class="jumbotron">
+        <h1>SWU BLOG</h1>
+        <p class="lead"></p>
+      </div>
+
+      <div>
+        <div class="col-lg-6">
+        <?php
+				$allblogs = find_blogs();
+				while($row = mysql_fetch_array($allblogs)){?>
+
+          <h4><?php echo '<a href="blog.php?var='.$row["blog_id"].'">'.$row["title"].'</a>' ?></h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <?php }?>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; Company 2014</p>
+      </footer>
+
+    </div> <!-- /container -->
 </body>
 </html>
