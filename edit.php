@@ -3,7 +3,6 @@
 $variable = $_GET['var'];
 define('hidden', TRUE);
 include("connect.php");
-include ("Parsedown.php");
 if ($variable != "") {
 	$blog = get_blog($variable);
 }
@@ -29,18 +28,21 @@ if ($variable != "") {
       </div>
 
       <div class="jumbotron">
-        <h1><?php echo $blog["title"] ?></h1>
+      <form method="post" action="submit.php">
+        <input type="hidden" name="blog_id" id="hiddenField" value="<?php echo $blog["blog_id"] ?>" />
+        <h1><input name="title" id="title" value="<?php echo $blog["title"] ?>"></h1>
         <p class="lead"></p>
       </div>
 
       <div>
         <div class="col-lg-12">
-        <form>
-        <textarea style="width:100%;" rows="20">
+        
+        <textarea name="blog" id="blog" style="width:100%;" rows="15">
         <?php 
         echo $blog["blog"];
         ?>
-        <textarea>   
+        </textarea>
+        <button type="submit" class="btn btn-default">Submit</button>   
         </form>   
         </div>
 

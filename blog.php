@@ -3,7 +3,6 @@
 $variable = $_GET['var'];
 define('hidden', TRUE);
 include("connect.php");
-include ("Parsedown.php");
 if ($variable != "") {
 	$blog = get_blog($variable);
 }

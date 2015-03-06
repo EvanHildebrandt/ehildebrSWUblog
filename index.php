@@ -2,7 +2,6 @@
 <?php
 define('hidden', TRUE);
 include("connect.php");
-include ("Parsedown.php");
 ?>
 <html lang="en">
 <head>
@@ -22,10 +21,12 @@ include ("Parsedown.php");
  <div class="container">
       <div class="header">
         <h3 class="text-muted"><a href="index.php">SWU BLOG</a></h3>
+
       </div>
 
       <div class="jumbotron">
         <h1>SWU BLOG</h1>
+        <p><a href="edit.php">Create a new Blog Post</a> </p>
         <p class="lead"></p>
       </div>
 
@@ -33,17 +34,15 @@ include ("Parsedown.php");
         <div class="col-lg-6">
         <?php
 				$allblogs = find_blogs();
-				while($row = mysql_fetch_array($allblogs)){
-					$Parsedown = new Parsedown();?>
+				while($row = mysql_fetch_array($allblogs)){?>
 
           <h4><?php echo '<a href="blog.php?var='.$row["blog_id"].'">'.$row["title"].'</a>' ?></h4>
-          <p><?php echo $Parsedown->text(substr($row["blog"],0,20)."...");?></p>
+          <p><?php echo substr($row["blog"],0,20)."...";?></p>
+          <p><?php echo '<a href="edit.php?var='.$row["blog_id"].'">edit</a>'?></p>
           <?php }?>
       </div>
 
-      <footer class="footer">
-        <p>&copy; Evan Hildebrandt 2015</p>
-      </footer>
+   
 
     </div> <!-- /container -->
 </body>
